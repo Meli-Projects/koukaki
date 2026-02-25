@@ -10,3 +10,13 @@
 # Optional: OS / editor noise
 .DS_Store
 Thumbs.db
+
+# Node
+node_modules/
+package-lock.json
+
+# Sass
+*.map
+
+# Build / dist
+dist/
