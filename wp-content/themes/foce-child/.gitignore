@@ -1,0 +1,12 @@
+# Ignore everything outside this theme folder (WordPress root, plugins, uploads, etc.)
+../*
+../../*
+../../../*
+
+# But keep this theme tracked
+!*
+!.gitignore
+
+# Optional: OS / editor noise
+.DS_Store
+Thumbs.db
