@@ -1,8 +1,72 @@
-body {
-  outline: 3px solid red;
+@charset "UTF-8";
+/* ===== animation fade in avec Keyframes ===== */
+@keyframes fadeDown { /*effet de descente*/
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-body p {
-  color: blue;
+.fadeDown {
+  animation: fadeDown 1.5s;
+}
+
+@keyframes fadeUp { /*effet de monté*/
+  from {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fadeUp {
+  animation: fadeUp 1.5s;
+}
+
+/*section story */
+/* Animation des décorations du h2 */
+.story h2::before,
+.story h2::after {
+  animation: fadeUp 2s;
+}
+
+/* Animation des décorations de l’article */
+.story__article::before,
+.story__article::after {
+  animation: fadeUp 1.5s;
+}
+
+/*section lieu*/
+.story #place {
+  position: relative;
+  overflow: hidden;
+  background: none;
+}
+
+.story #place::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../../../foce/assets/images/place_bg.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  animation: fadeUp 1.5s;
+}
+
+.story #place > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation des décorations section studio */
+#studio > div::before {
+  animation: fadeUp 1.5s;
 }
 
 /*# sourceMappingURL=style.css.map */
