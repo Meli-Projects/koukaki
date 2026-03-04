@@ -17,7 +17,7 @@
 @keyframes fadeUp { /*effet de monté*/
   from {
     opacity: 0;
-    transform: translateY(150px);
+    transform: translateY(300px);
   }
   to {
     opacity: 1;
@@ -28,26 +28,25 @@
   animation: fadeUp 1.5s;
 }
 
-/*section story */
-/* Animation des décorations du h2 */
+/* ===== test exempter balise p ===== */
+/*section story 
+Animation des décorations du h2
 .story h2::before,
 .story h2::after {
-  animation: fadeUp 2s;
-}
-
-/* Animation des décorations de l’article */
+animation: fadeUp 1.5s;
+}*/
+/* Animation des décorations de l’article
 .story__article::before,
 .story__article::after {
   animation: fadeUp 1.5s;
-}
-
-/*section lieu*/
+}*/
+/*section lieu
 .story #place {
   position: relative;
   overflow: hidden;
-  background: none;
-}
-
+  background: none; // enlève le background original
+}*/
+/*
 .story #place::before {
   content: "";
   position: absolute;
@@ -57,16 +56,46 @@
   background-position: center;
   z-index: 0;
   animation: fadeUp 1.5s;
-}
-
+}*/
+/*
 .story #place > * {
   position: relative;
   z-index: 1;
-}
-
-/* Animation des décorations section studio */
+}*/
+/* Animation des décorations section studio 
 #studio > div::before {
   animation: fadeUp 1.5s;
+}*/
+/* ===== rotation fleur ===== */
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.story h2::after,
+.story__article::after,
+#studio h2::after,
+#studio h2::before,
+.site-footer::after,
+.site-footer::before,
+.site-footer ul::after {
+  animation: rotateFlower 15s linear infinite;
+}
+
+/* ===== titre au scroll ===== */
+.title-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+  display: inline-block;
+}
+
+.title-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /*# sourceMappingURL=style.css.map */
