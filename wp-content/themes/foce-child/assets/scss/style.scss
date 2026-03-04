@@ -29,18 +29,18 @@
     animation: fadeUp 1.5s;
 }
 /*section story */
-/* Animation des décorations du h2 */
+/* Animation des décorations du h2
 .story h2::before,
 .story h2::after {
-  animation: fadeUp 2s;
-}
+
+animation: fadeUp 1.5s;
+} */
 
 /* Animation des décorations de l’article */
 .story__article::before,
 .story__article::after {
   animation: fadeUp 1.5s;
 }
-
 
 /*section lieu*/
 .story #place {
@@ -53,13 +53,10 @@
   content: "";
   position: absolute;
   inset: 0;
-
   background-image: url("../../../foce/assets/images/place_bg.png");
   background-size: cover;
   background-position: center;
-
   z-index: 0;
-
   animation: fadeUp 1.5s;
 }
 
@@ -72,3 +69,23 @@
 #studio > div::before {
   animation: fadeUp 1.5s;
 }
+
+/* ===== rotation fleur ===== */
+@keyframes rotateFlower {
+  from   { 
+    transform: rotate(0deg); 
+  }
+  to { transform: rotate(360deg); 
+  }
+}
+.story h2::after,
+.story__article::after,
+#studio h2::after,
+#studio h2::before,
+.site-footer::after,
+.site-footer::before,
+.site-footer ul::after
+ {
+  animation: rotateFlower 15s linear infinite;
+}
+
