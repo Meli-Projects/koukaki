@@ -10,8 +10,9 @@
  */
 
 ?>
-
 	<footer id="colophon" class="site-footer fadeUp">
+        <?php get_template_part('template-parts/oscars'); ?>
+
         <ul>
             <li><a href="#">Mentions Légales</a></li>
             <li><a href="#">STUDIO KOUKAKI</a></li>

@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html, body {
+  overflow-x: hidden;
+}
+
 /* ===== animation fade in avec Keyframes ===== */
 @keyframes fadeDown { /*effet de descente*/
   from {
@@ -79,6 +83,7 @@ animation: fadeUp 1.5s;
 .story__article::after,
 #studio h2::after,
 #studio h2::before,
+#studio::after,
 .site-footer::after,
 .site-footer::before,
 .site-footer ul::after {
@@ -96,6 +101,100 @@ animation: fadeUp 1.5s;
 .title-scroll.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== section footer/oscars ===== */
+.site-footer {
+  display: block;
+  min-height: 55em;
+  padding-top: 10em;
+  padding-bottom: 1em;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::after {
+  content: none;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  width: 216px;
+  height: 216px;
+  background-image: url("../../../foce/assets/images/Sunflower.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  left: 5em;
+  top: 2em;
+}
+
+#studio {
+  position: relative;
+}
+
+#studio::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  background-image: url("../../../foce/assets/images/orchid.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  right: -4em;
+  bottom: -8.5em;
+  /*animation: rotateFlower 15s linear infinite; ajout de #studio::after dans animation de rotation*/
+}
+
+.oscars {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.oscars_inner {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.oscars_text {
+  margin: 0;
+  width: 761px;
+  height: 283px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #FFF5E9;
+  text-align: left;
+  background-image: url("../images/orange_title_bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.img_oscars {
+  display: block;
+  width: 279px;
+  height: 129px;
+  margin-top: 58px;
+}
+
+/* menu footer fixé en bas */
+.site-footer ul {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 /*# sourceMappingURL=style.css.map */
