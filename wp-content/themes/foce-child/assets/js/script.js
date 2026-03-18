@@ -14,4 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   titles.forEach((title) => observer.observe(title));
 });
-console.log("script.js chargé");
+
+  /* paralaxe */
+  const logoWrapper = document.querySelector('.banner_logo_wrapper');
+// On vérifie si présent + désactive sur tablette
+if (logoWrapper && window.innerWidth > 768) {
+  window.addEventListener('scroll', function () {
+    let scrollY = window.scrollY;
+
+    logoWrapper.style.transform = `translateY(${scrollY * 0.3}px)`;
+  });
+}
+
+

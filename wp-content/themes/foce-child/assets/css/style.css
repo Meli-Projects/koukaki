@@ -3,6 +3,44 @@ html, body {
   overflow-x: hidden;
 }
 
+/* ===== vidéo bannière ===== */
+.banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner_video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.banner_logo_wrapper {
+  position: relative;
+  z-index: 2;
+  margin-top: -10%;
+  width: 50%;
+}
+
+.banner img.banner_logo {
+  display: block;
+  width: 100%;
+  margin-top: 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ===== animation flottement titre ===== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
 /* ===== animation fade in avec Keyframes ===== */
 @keyframes fadeDown { /*effet de descente*/
   from {
@@ -195,6 +233,30 @@ animation: fadeUp 1.5s;
   left: 0;
   width: 100%;
   z-index: 2;
+}
+
+/* ===== responsive ===== */
+/* ===== vidéo bannière / image feelback mobile ===== */
+@media screen and (max-width: 768px) {
+  .banner {
+    min-height: 500px;
+    background-position: center;
+  }
+  .banner_video {
+    display: none;
+  }
+  .banner_logo_wrapper {
+    width: 75%;
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .banner {
+    min-height: 220px;
+  }
+  .banner_logo_wrapper {
+    width: 60%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

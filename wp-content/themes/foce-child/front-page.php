@@ -5,8 +5,14 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner fadeDown">
-            <img class="fadeUp" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <video class="banner_video" autoplay muted loop playsinline>
+            <source src="<?php echo get_stylesheet_directory_uri() . '/assets/videos/Studio-Koukaki-video-header.mp4'; ?>" type="video/mp4">
+            </video>
+            <div class="banner_logo_wrapper fadeUp">
+            <img class="banner_logo" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
+            </div>
         </section>
+        
         <section id="story" class="story fadeUp">
             <h2><span class="title-scroll">L'histoire</span></h2>
             <article id="" class="story__article">
