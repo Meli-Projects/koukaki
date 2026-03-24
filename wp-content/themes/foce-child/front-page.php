@@ -54,6 +54,7 @@ get_header();
                     ?>
                 </div>
             </article>
+                <?php get_template_part('template-parts/characters-swiper'); ?>
             <article id="place">
                 <div>
                     <h3><span class="title-scroll">Le Lieu</span></h3>
