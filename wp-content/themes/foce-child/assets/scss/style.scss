@@ -277,8 +277,34 @@ animation: fadeUp 1.5s;
   object-fit: contain;
 }
 
-/* ===== responsive ===== */
+/* ===== lieu ===== */
+.story #place{
+  position: relative;
+  background-image: url("../images/Studio_Koukaki-image_place.png") ;
+  overflow: hidden;
+}
 
+#place .big_cloud {
+  position: absolute;
+  width: 316px;
+  height: 122px;
+  right: 90px;
+  top: 70px;
+  filter: blur(10px);
+}
+
+#place .little_cloud {
+  position: absolute;
+  width: 142px;
+  height: 55px;
+  right: 516px;
+  top:258px;
+  filter: blur(13px);
+}
+
+
+
+/* ===== responsive ===== */
 /* ===== vidéo bannière / image feelback mobile ===== */
 @media screen and (max-width: 768px) {
   .banner {

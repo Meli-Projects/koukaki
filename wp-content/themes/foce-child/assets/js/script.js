@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   titles.forEach((title) => observer.observe(title));
 });
 
-  /* paralaxe */
+/* ===== paralaxe ===== */
   const logoWrapper = document.querySelector('.banner_logo_wrapper');
 // On vérifie si présent + désactive sur tablette
 if (logoWrapper && window.innerWidth > 768) {
@@ -26,4 +26,30 @@ if (logoWrapper && window.innerWidth > 768) {
   });
 }
 
+/* ===== paralaxe nuages section lieu ===== */
+document.addEventListener("DOMContentLoaded", function () {
+  const placeSection = document.querySelector("#place");
+  const bigCloud = document.querySelector(".big_cloud");
+  const littleCloud = document.querySelector(".little_cloud");
 
+  if (!placeSection || !bigCloud || !littleCloud) return;
+
+  function moveClouds() {
+    const rect = placeSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    let progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+
+    progress = Math.max(0, Math.min(progress, 1));
+
+    const translateValue = progress * -300;
+
+    bigCloud.style.transform = `translateX(${translateValue}px)`;
+    littleCloud.style.transform = `translateX(${translateValue}px)`;
+  }
+
+  window.addEventListener("scroll", moveClouds);
+  window.addEventListener("resize", moveClouds);
+
+  moveClouds();
+});
