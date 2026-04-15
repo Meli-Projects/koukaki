@@ -1,21 +1,18 @@
-/* ===== header ===== */
+/* header */
 .main-navigation {
-  /*position: relative;*/
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
 }
 
-/*.nav-center {
-  text-align: center;
-}*/
-
-.site-title a {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #000;
-  text-decoration: none;
+.site-title {
+  a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+    text-decoration: none;
+  }
 }
 
 .menu-header {
@@ -62,32 +59,26 @@
   padding: 0;
   list-style: none;
   text-align: center;
-}
 
-.menu li {
-  margin: 2rem 0;
-}
+  li {
+    margin: 2rem 0;
+  }
 
-.menu a {
-  display: inline-block;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 4rem;
-  font-weight: 400;
-  color: #000;
-  text-decoration: none;
+  a {
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-}
-
-.menu a:hover {
-  text-shadow: 0 0 14px #FF5C00;
-}
-
-.menu-overlay.active .menu a {
-  opacity: 1;
-  transform: translateY(0);
+    &:hover {
+      text-shadow: 0 0 14px #FF5C00;
+    }
+  }
 }
 
 .menu-footer {
@@ -99,7 +90,7 @@
   text-align: center;
 }
 
-/* ===== Bouton du menu burger ===== */
+/* Bouton du menu burger */
 .menu-toggle {
   display: flex !important;
   flex-direction: column;
@@ -111,19 +102,19 @@
   background: none;
   border: none;
   cursor: pointer;
+
+  .line {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+  }
 }
 
-.menu-toggle .line {
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: #000;
-}
-
-/* ===== overlay menu ===== */
+/* overlay menu */
 .menu-overlay {
   position: fixed;
-  top: 0px;
+  top: 0;
   left: 0;
   z-index: 1000;
   display: flex;
@@ -138,21 +129,26 @@
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.4s ease, visibility 0.4s ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  img {
+    position: absolute;
+  }
+
+  &.active .menu a {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* ===== images décoration header ===== */
+/* images décoration */
 .logo_menu {
   top: 7%;
-}
-
-.menu-overlay img {
-  position: absolute;
 }
 
 .flower {
@@ -207,8 +203,6 @@
   width: 95px;
   height: 106px;
   --rotate: 0.51deg;
-  /*border-bottom-right-radius: 8.24px;
-  border-bottom-left-radius: 8.24px;*/
 }
 
 .cat_jaakuna {

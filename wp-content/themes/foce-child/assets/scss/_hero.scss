@@ -1,7 +1,14 @@
-/* ===== vidéo bannière ===== */
+/* vidéo bannière */
 .banner {
   position: relative;
   overflow: hidden;
+
+  img.banner_logo {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+    animation: float 4s ease-in-out infinite;
+  }
 }
 
 .banner_video {
@@ -20,16 +27,8 @@
   width: 50%;
 }
 
-.banner img.banner_logo {
-  display: block;
-  width: 100%;
-  margin-top: 0;
-
-  animation: float 4s ease-in-out infinite;
-}
-
-/* ===== responsive ===== */
-/* ===== vidéo bannière / image feelback mobile ===== */
+/* responsive */
+/* vidéo bannière / image fallback mobile */
 @media screen and (max-width: 768px) {
   .banner {
     min-height: 500px;
