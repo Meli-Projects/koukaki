@@ -1,6 +1,221 @@
 @charset "UTF-8";
-html, body {
-  overflow-x: hidden;
+/* ===== header ===== */
+.main-navigation {
+  /*position: relative;*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+/*.nav-center {
+  text-align: center;
+}*/
+.site-title a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.menu-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 5rem;
+  background: #f3c58b;
+}
+
+.menu-header__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.menu-close {
+  position: absolute;
+  right: 2rem;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.menu {
+  z-index: 20;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.menu li {
+  margin: 2rem 0;
+}
+
+.menu a {
+  display: inline-block;
+  font-family: "Roboto Mono", monospace;
+  font-size: 4rem;
+  font-weight: 400;
+  color: #000;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.menu a:hover {
+  text-shadow: 0 0 14px #FF5C00;
+}
+
+.menu-overlay.active .menu a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-footer {
+  position: absolute;
+  bottom: 1.25rem;
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  color: #000;
+  text-align: center;
+}
+
+/* ===== Bouton du menu burger ===== */
+.menu-toggle {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 40px;
+  height: 30px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle .line {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+}
+
+/* ===== overlay menu ===== */
+.menu-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 5rem;
+  background-color: #FFF5E9;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ===== images décoration header ===== */
+.logo_menu {
+  top: 7%;
+}
+
+.menu-overlay img {
+  position: absolute;
+}
+
+.flower {
+  animation: rotateFlower 20s linear infinite;
+}
+
+.flower_orchid {
+  top: 15%;
+  left: -2%;
+  width: 172px;
+}
+
+.flower_sunflower {
+  top: 15%;
+  right: 5%;
+  width: 216px;
+}
+
+.flower_random {
+  top: 49%;
+  right: -0.8%;
+  width: 75px;
+}
+
+.flower_orange {
+  top: 55%;
+  left: 14%;
+  width: 70px;
+}
+
+.flower_hibiscus {
+  right: -16%;
+  bottom: -27%;
+  width: 626px;
+}
+
+.cat {
+  animation: floatCat 4s ease-in-out infinite;
+}
+
+.cat_kawaneko {
+  top: 30%;
+  left: 18%;
+  width: 109px;
+  height: 98px;
+  --rotate: 17deg;
+}
+
+.cat_onejiiro {
+  top: 83%;
+  left: 6%;
+  width: 95px;
+  height: 106px;
+  --rotate: 0.51deg;
+  /*border-bottom-right-radius: 8.24px;
+  border-bottom-left-radius: 8.24px;*/
+}
+
+.cat_jaakuna {
+  top: 55%;
+  right: 17%;
+  width: 154px;
+  height: 147px;
+  --rotate: 0deg;
 }
 
 /* ===== vidéo bannière ===== */
@@ -32,215 +247,35 @@ html, body {
   animation: float 4s ease-in-out infinite;
 }
 
-/* ===== animation flottement titre ===== */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
+/* ===== responsive ===== */
+/* ===== vidéo bannière / image feelback mobile ===== */
+@media screen and (max-width: 768px) {
+  .banner {
+    min-height: 500px;
+    background-position: center;
   }
-  50% {
-    transform: translateY(-15px);
+  .banner_video {
+    display: none;
   }
-}
-/* ===== animation fade in avec Keyframes ===== */
-@keyframes fadeDown { /*effet de descente*/
-  from {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .banner_logo_wrapper {
+    width: 75%;
+    margin-top: 0;
   }
 }
-.fadeDown {
-  animation: fadeDown 1.5s;
-}
-
-@keyframes fadeUp { /*effet de monté*/
-  from {
-    opacity: 0;
-    transform: translateY(300px);
+@media screen and (max-width: 480px) {
+  .banner {
+    min-height: 220px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .banner_logo_wrapper {
+    width: 60%;
   }
 }
-.fadeUp {
-  animation: fadeUp 1.5s;
-}
-
-/* ===== test exempter balise p ===== */
-/*section story 
-Animation des décorations du h2
-.story h2::before,
-.story h2::after {
-animation: fadeUp 1.5s;
-}*/
-/* Animation des décorations de l’article
-.story__article::before,
-.story__article::after {
-  animation: fadeUp 1.5s;
-}*/
-/*section lieu
-.story #place {
-  position: relative;
-  overflow: hidden;
-  background: none; // enlève le background original
-}*/
-/*
-.story #place::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("../../../foce/assets/images/place_bg.png");
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  animation: fadeUp 1.5s;
-}*/
-/*
-.story #place > * {
-  position: relative;
-  z-index: 1;
-}*/
-/* Animation des décorations section studio 
-#studio > div::before {
-  animation: fadeUp 1.5s;
-}*/
-/* ===== rotation fleur ===== */
-@keyframes rotateFlower {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.story h2::after,
-.story__article::after,
-#studio h2::after,
-#studio h2::before,
-#studio::after,
-.site-footer::after,
-.site-footer::before,
-.site-footer ul::after {
-  animation: rotateFlower 15s linear infinite;
-}
-
-/* ===== titre au scroll ===== */
-.title-scroll {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
-  display: inline-block;
-}
-
-.title-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== section footer/oscars ===== */
-.site-footer {
-  display: block;
-  min-height: 55em;
-  padding-top: 10em;
-  padding-bottom: 1em;
-  position: relative;
-  overflow: hidden;
-}
-
-.site-footer::after {
-  content: none;
-}
-
-.site-footer::before {
-  content: "";
-  position: absolute;
-  width: 216px;
-  height: 216px;
-  background-image: url("../../../foce/assets/images/Sunflower.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  left: 5em;
-  top: 2em;
-}
-
-#studio {
-  position: relative;
-}
-
-#studio::after {
-  content: "";
-  position: absolute;
-  width: 170px;
-  height: 170px;
-  background-image: url("../../../foce/assets/images/orchid.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  right: -4em;
-  bottom: -8.5em;
-  /*animation: rotateFlower 15s linear infinite; ajout de #studio::after dans animation de rotation*/
-}
-
-.oscars {
-  width: 100%;
-  position: relative;
-  z-index: 2;
-}
-
-.oscars_inner {
-  width: 100%;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.oscars_text {
-  margin: 0;
-  width: 761px;
-  height: 283px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Quicksand", sans-serif;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: #FFF5E9;
-  text-align: left;
-  background-image: url("../images/orange_title_bg.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-
-.img_oscars {
-  display: block;
-  width: 279px;
-  height: 129px;
-  margin-top: 58px;
-}
-
-/* menu footer fixé en bas */
-.site-footer ul {
-  position: absolute;
-  bottom: 1em;
-  left: 0;
-  width: 100%;
-  z-index: 2;
-}
-
 /* ===== personnage carousel ===== */
 .story #characters.characters-section {
   display: flex;
   flex-direction: column;
   max-width: 1440px;
-  margin: 6em 0 6em 100px;
+  margin: 6rem 0 6rem 6.25rem;
   width: 100%;
 }
 
@@ -298,28 +333,191 @@ animation: fadeUp 1.5s;
   filter: blur(13px);
 }
 
-/* ===== responsive ===== */
-/* ===== vidéo bannière / image feelback mobile ===== */
-@media screen and (max-width: 768px) {
-  .banner {
-    min-height: 500px;
-    background-position: center;
+/* ===== section footer/oscars ===== */
+.site-footer {
+  display: block;
+  min-height: 55rem;
+  padding-top: 10rem;
+  padding-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::after {
+  content: none;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  width: 216px;
+  height: 216px;
+  background-image: url("../../../foce/assets/images/Sunflower.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  left: 5rem;
+  top: 2rem;
+}
+
+#studio {
+  position: relative;
+}
+
+#studio::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  background-image: url("../../../foce/assets/images/orchid.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  right: -4rem;
+  bottom: -8.5rem;
+  /*animation: rotateFlower 15s linear infinite; ajout de #studio::after dans animation de rotation*/
+}
+
+.oscars {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.oscars_inner {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.oscars_text {
+  margin: 0;
+  width: 761px;
+  height: 283px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 2.625rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #FFF5E9;
+  text-align: left;
+  background-image: url("../images/orange_title_bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.img_oscars {
+  display: block;
+  width: 279px;
+  height: 129px;
+  margin-top: 3.625rem;
+}
+
+/* menu footer fixé en bas */
+.site-footer ul {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+/* ==== animation desz chats header overlay*/
+@keyframes floatCat {
+  0% {
+    transform: translate(0, 0) rotate(var(--rotate, 0deg));
   }
-  .banner_video {
-    display: none;
+  25% {
+    transform: translate(6px, -8px) rotate(calc(var(--rotate, 0deg) + 1deg));
   }
-  .banner_logo_wrapper {
-    width: 75%;
-    margin-top: 0;
+  50% {
+    transform: translate(-4px, -14px) rotate(calc(var(--rotate, 0deg) - 1deg));
+  }
+  75% {
+    transform: translate(5px, -6px) rotate(calc(var(--rotate, 0deg) + 0.5deg));
+  }
+  100% {
+    transform: translate(0, 0) rotate(var(--rotate, 0deg));
   }
 }
-@media screen and (max-width: 480px) {
-  .banner {
-    min-height: 220px;
+/* ===== animation flottement titre ===== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
   }
-  .banner_logo_wrapper {
-    width: 60%;
+  50% {
+    transform: translateY(-15px);
   }
+}
+/* ===== animation fade in avec Keyframes ===== */
+@keyframes fadeDown { /*effet de descente*/
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fadeDown {
+  animation: fadeDown 1.5s;
+}
+
+@keyframes fadeUp { /*effet de monté*/
+  from {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fadeUp {
+  animation: fadeUp 1.5s;
+}
+
+/* ===== rotation fleur ===== */
+@keyframes rotateFlower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.story h2::after,
+.story__article::after,
+#studio h2::after,
+#studio h2::before,
+#studio::after,
+.site-footer::after,
+.site-footer::before,
+.site-footer ul::after {
+  animation: rotateFlower 15s linear infinite;
+}
+
+/* ===== titre au scroll ===== */
+.title-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+  display: inline-block;
+}
+
+.title-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html {
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

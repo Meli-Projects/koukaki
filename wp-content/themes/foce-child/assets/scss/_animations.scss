@@ -1,0 +1,92 @@
+/* ==== animation desz chats header overlay*/
+@keyframes floatCat {
+  0% {
+    transform: translate(0, 0) rotate(var(--rotate, 0deg));
+  }
+  25% {
+    transform: translate(6px, -8px) rotate(calc(var(--rotate, 0deg) + 1deg));
+  }
+  50% {
+    transform: translate(-4px, -14px) rotate(calc(var(--rotate, 0deg) - 1deg));
+  }
+  75% {
+    transform: translate(5px, -6px) rotate(calc(var(--rotate, 0deg) + 0.5deg));
+  }
+  100% {
+    transform: translate(0, 0) rotate(var(--rotate, 0deg));
+  }
+}
+
+/* ===== animation flottement titre ===== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ===== animation fade in avec Keyframes ===== */
+@keyframes fadeDown { /*effet de descente*/
+    from {
+    opacity: 0;
+    transform: translateY(-100px);
+    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeDown {
+    animation: fadeDown 1.5s;
+}
+
+@keyframes fadeUp { /*effet de monté*/
+    from {
+    opacity: 0;
+    transform: translateY(300px);
+    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeUp {
+    animation: fadeUp 1.5s;
+}
+
+/* ===== rotation fleur ===== */
+@keyframes rotateFlower {
+  from   { 
+    transform: rotate(0deg); 
+  }
+  to { transform: rotate(360deg); 
+  }
+}
+.story h2::after,
+.story__article::after,
+#studio h2::after,
+#studio h2::before,
+#studio::after,
+.site-footer::after,
+.site-footer::before,
+.site-footer ul::after
+ {
+  animation: rotateFlower 15s linear infinite;
+}
+
+/* ===== titre au scroll ===== */
+.title-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+  display: inline-block;
+}
+
+.title-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

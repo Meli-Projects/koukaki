@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     progress = Math.max(0, Math.min(progress, 1));
 
     const translateValue = progress * -300;
+console.log(translateValue);
 
     bigCloud.style.transform = `translateX(${translateValue}px)`;
     littleCloud.style.transform = `translateX(${translateValue}px)`;
@@ -52,4 +53,34 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", moveClouds);
 
   moveClouds();
+});
+
+/* ===== menu ===== */
+document.addEventListener('DOMContentLoaded', function () {
+
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuOverlay = document.querySelector('#menu-overlay');
+  const menuClose = document.querySelector('.menu-close');
+  const menuLinks = document.querySelectorAll('.menu a');
+
+  // OUVRIR MENU
+  menuToggle.addEventListener('click', function () {
+    menuOverlay.classList.add('active');
+    document.body.classList.add('no-scroll');
+  });
+
+  // FERMER AVEC CROIX
+  menuClose.addEventListener('click', function () {
+    menuOverlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  });
+
+  // FERMER EN CLIQUANT SUR UN LIEN
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      menuOverlay.classList.remove('active');
+      document.body.classList.remove('no-scroll');
+    });
+  });
+
 });

@@ -1,0 +1,220 @@
+/* ===== header ===== */
+.main-navigation {
+  /*position: relative;*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+/*.nav-center {
+  text-align: center;
+}*/
+
+.site-title a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.menu-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 5rem;
+  background: #f3c58b;
+}
+
+.menu-header__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.menu-close {
+  position: absolute;
+  right: 2rem;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.menu {
+  z-index: 20;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.menu li {
+  margin: 2rem 0;
+}
+
+.menu a {
+  display: inline-block;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 4rem;
+  font-weight: 400;
+  color: #000;
+  text-decoration: none;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.menu a:hover {
+  text-shadow: 0 0 14px #FF5C00;
+}
+
+.menu-overlay.active .menu a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-footer {
+  position: absolute;
+  bottom: 1.25rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  color: #000;
+  text-align: center;
+}
+
+/* ===== Bouton du menu burger ===== */
+.menu-toggle {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 40px;
+  height: 30px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle .line {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+}
+
+/* ===== overlay menu ===== */
+.menu-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 5rem;
+  background-color: #FFF5E9;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ===== images décoration header ===== */
+.logo_menu {
+  top: 7%;
+}
+
+.menu-overlay img {
+  position: absolute;
+}
+
+.flower {
+  animation: rotateFlower 20s linear infinite;
+}
+
+.flower_orchid {
+  top: 15%;
+  left: -2%;
+  width: 172px;
+}
+
+.flower_sunflower {
+  top: 15%;
+  right: 5%;
+  width: 216px;
+}
+
+.flower_random {
+  top: 49%;
+  right: -0.8%;
+  width: 75px;
+}
+
+.flower_orange {
+  top: 55%;
+  left: 14%;
+  width: 70px;
+}
+
+.flower_hibiscus {
+  right: -16%;
+  bottom: -27%;
+  width: 626px;
+}
+
+.cat {
+  animation: floatCat 4s ease-in-out infinite;
+}
+
+.cat_kawaneko {
+  top: 30%;
+  left: 18%;
+  width: 109px;
+  height: 98px;
+  --rotate: 17deg;
+}
+
+.cat_onejiiro {
+  top: 83%;
+  left: 6%;
+  width: 95px;
+  height: 106px;
+  --rotate: 0.51deg;
+  /*border-bottom-right-radius: 8.24px;
+  border-bottom-left-radius: 8.24px;*/
+}
+
+.cat_jaakuna {
+  top: 55%;
+  right: 17%;
+  width: 154px;
+  height: 147px;
+  --rotate: 0deg;
+}
