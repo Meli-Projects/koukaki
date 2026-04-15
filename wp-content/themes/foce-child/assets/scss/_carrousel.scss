@@ -1,0 +1,86 @@
+/* personnage du carousel */
+.characters-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: 6rem 0 6rem 6.25rem;
+    width: 100%;
+
+    h3 {
+      align-self: flex-start;
+    }
+  }
+
+
+.characters-swiper {
+  width: 100%;
+
+  .swiper-slide {
+    width: 360px;
+    text-align: center;
+  }
+
+  figure {
+    width: 400px;
+    height: 440px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: contain;
+  }
+}
+
+/*responsive personnage*/
+@media (max-width: 1024px) {
+  .characters-swiper {
+    .swiper-slide {
+      width: 280px;
+    }
+
+    figure {
+      width: 300px;
+      height: auto;
+    }
+  }
+
+  .characters-section {
+    margin: 5rem 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .characters-swiper {
+
+    .swiper-slide {
+      width: 220px !important;
+    }
+
+    figure {
+      width: 240px;
+      height: auto;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .characters-section {
+    margin: 4rem 1rem; 
+  }
+}
+
+/*responsive titre section*/
+@media (max-width: 426px) {
+  .story #characters h3 {
+    font-size: 1.8rem; 
+  }
+}

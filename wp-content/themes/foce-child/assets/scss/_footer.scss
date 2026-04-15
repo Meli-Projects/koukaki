@@ -1,55 +1,4 @@
 /* section footer / oscars */
-.site-footer {
-  display: block;
-  min-height: 55rem;
-  padding-top: 10rem;
-  padding-bottom: 1rem;
-  position: relative;
-  overflow: hidden;
-
-  &::after {
-    content: none;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 216px;
-    height: 216px;
-    background-image: url("../../../foce/assets/images/Sunflower.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    left: 5rem;
-    top: 2rem;
-  }
-
-  ul {
-    position: absolute;
-    bottom: 1rem;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-  }
-}
-
-#studio {
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 170px;
-    height: 170px;
-    background-image: url("../../../foce/assets/images/orchid.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    right: -4rem;
-    bottom: -8.5rem;
-  }
-}
-
 .oscars {
   width: 100%;
   position: relative;
@@ -88,4 +37,94 @@
   width: 279px;
   height: 129px;
   margin-top: 3.625rem;
+}
+
+.site-footer {
+  display: block;
+  min-height: 55rem;
+  padding-top: 10rem;
+  padding-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 216px;
+    height: 216px;
+    background-image: url("../../../foce/assets/images/Sunflower.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    left: 5rem;
+    top: 2rem;
+  }
+
+  ul {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+
+/*responsive pseudo element désactivé*/
+@media (max-width: 767px) {
+  .site-footer::before {
+    content: none;
+  }
+}
+
+/*responsive p*/
+@media (max-width: 900px) {
+  #oscars p {
+    font-size: 1.8rem; 
+  }
+}
+
+@media (max-width: 700px) {
+  #oscars p {
+    background-image: none;
+    color: #FF6A00;
+    padding: 1.5rem;
+    height: auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .oscars_inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  #oscars p {
+    width: 90%;
+    text-align: center;
+  }
+
+    .img_oscars {
+      height: auto;
+      margin-top: 0;
+  }
+
+}
+
+@media (max-width: 403px) {
+  .site-footer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-footer ul li {
+    font-size: 0.85rem;
+  }
 }

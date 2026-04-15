@@ -11,11 +11,11 @@ function theme_enqueue_styles() {
 
 }
 
-// Get customizer options form parent theme
+// Récupérer le customizer depuis le thème parent
 if ( get_stylesheet() !== get_template() ) {
     add_filter( 'pre_update_option_theme_mods_' . get_stylesheet(), function ( $value, $old_value ) {
         update_option( 'theme_mods_' . get_template(), $value );
-        return $old_value; // prevent update to child theme mods
+        return $old_value; // Empêche la mise à jour des options dans le thème enfant
     }, 10, 2 );
     add_filter( 'pre_option_theme_mods_' . get_stylesheet(), function ( $default ) {
         return get_option( 'theme_mods_' . get_template(), $default );

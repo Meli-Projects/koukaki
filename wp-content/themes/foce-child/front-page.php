@@ -30,7 +30,6 @@ get_header();
             </article>
         </section>
 
-
         <section id="studio" class="fadeUp">
             <h2><span class="title-scroll">Studio Koukaki</span></h2>
             <div>

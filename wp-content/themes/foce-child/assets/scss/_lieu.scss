@@ -24,3 +24,22 @@
     }
   }
 }
+
+/*responsive*/
+@media (max-width: 767px) {
+  .story {
+    #place {
+      .big_cloud,
+      .little_cloud {
+        display: none;
+      }
+    }
+  }
+}
+
+/*responsive titre section*/
+@media (max-width: 426px) {
+  .story #place h3 {
+    font-size: 1.8rem; 
+  }
+}

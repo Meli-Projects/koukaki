@@ -1,16 +1,12 @@
 @charset "UTF-8";
-/* ===== header ===== */
+/* header */
 .main-navigation {
-  /*position: relative;*/
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
 }
 
-/*.nav-center {
-  text-align: center;
-}*/
 .site-title a {
   font-size: 1.5rem;
   font-weight: 700;
@@ -63,11 +59,9 @@
   list-style: none;
   text-align: center;
 }
-
 .menu li {
   margin: 2rem 0;
 }
-
 .menu a {
   display: inline-block;
   font-family: "Roboto Mono", monospace;
@@ -79,14 +73,8 @@
   transform: translateY(50px);
   transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 }
-
 .menu a:hover {
   text-shadow: 0 0 14px #FF5C00;
-}
-
-.menu-overlay.active .menu a {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .menu-footer {
@@ -98,7 +86,7 @@
   text-align: center;
 }
 
-/* ===== Bouton du menu burger ===== */
+/* Bouton du menu burger */
 .menu-toggle {
   display: flex !important;
   flex-direction: column;
@@ -111,7 +99,6 @@
   border: none;
   cursor: pointer;
 }
-
 .menu-toggle .line {
   display: block;
   width: 30px;
@@ -119,10 +106,10 @@
   background-color: #000;
 }
 
-/* ===== overlay menu ===== */
+/* overlay menu */
 .menu-overlay {
   position: fixed;
-  top: 0px;
+  top: 0;
   left: 0;
   z-index: 1000;
   display: flex;
@@ -138,20 +125,22 @@
   pointer-events: none;
   transition: opacity 0.4s ease, visibility 0.4s ease;
 }
-
 .menu-overlay.active {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
-
-/* ===== images décoration header ===== */
-.logo_menu {
-  top: 7%;
-}
-
 .menu-overlay img {
   position: absolute;
+}
+.menu-overlay.active .menu a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* images décoration */
+.logo_menu {
+  top: 7%;
 }
 
 .flower {
@@ -206,8 +195,6 @@
   width: 95px;
   height: 106px;
   --rotate: 0.51deg;
-  /*border-bottom-right-radius: 8.24px;
-  border-bottom-left-radius: 8.24px;*/
 }
 
 .cat_jaakuna {
@@ -218,10 +205,31 @@
   --rotate: 0deg;
 }
 
-/* ===== vidéo bannière ===== */
+/*responsive*/
+@media (max-width: 700px) {
+  .menu-overlay img {
+    display: none;
+  }
+  .menu-overlay .logo_menu {
+    display: block;
+  }
+  .menu a {
+    font-size: 3rem;
+  }
+  .menu li {
+    margin: 1.5rem 0;
+  }
+}
+/* vidéo bannière */
 .banner {
   position: relative;
   overflow: hidden;
+}
+.banner img.banner_logo {
+  display: block;
+  width: 100%;
+  margin-top: 0;
+  animation: float 4s ease-in-out infinite;
 }
 
 .banner_video {
@@ -240,15 +248,8 @@
   width: 50%;
 }
 
-.banner img.banner_logo {
-  display: block;
-  width: 100%;
-  margin-top: 0;
-  animation: float 4s ease-in-out infinite;
-}
-
-/* ===== responsive ===== */
-/* ===== vidéo bannière / image feelback mobile ===== */
+/* responsive */
+/* vidéo bannière / image fallback mobile */
 @media screen and (max-width: 768px) {
   .banner {
     min-height: 500px;
@@ -270,28 +271,25 @@
     width: 60%;
   }
 }
-/* ===== personnage carousel ===== */
-.story #characters.characters-section {
+/* personnage du carousel */
+.characters-section {
   display: flex;
   flex-direction: column;
   max-width: 1440px;
   margin: 6rem 0 6rem 6.25rem;
   width: 100%;
 }
-
-.story #characters.characters-section h3 {
+.characters-section h3 {
   align-self: flex-start;
 }
 
 .characters-swiper {
   width: 100%;
 }
-
 .characters-swiper .swiper-slide {
   width: 360px;
   text-align: center;
 }
-
 .characters-swiper figure {
   width: 400px;
   height: 440px;
@@ -300,22 +298,55 @@
   flex-direction: column;
   align-items: center;
 }
-
 .characters-swiper img {
   display: block;
-  width: 360px;
+  width: 100%;
   height: 360px;
   object-fit: contain;
 }
 
-/* ===== lieu ===== */
+/*responsive personnage*/
+@media (max-width: 1024px) {
+  .characters-swiper .swiper-slide {
+    width: 280px;
+  }
+  .characters-swiper figure {
+    width: 300px;
+    height: auto;
+  }
+  .characters-section {
+    margin: 5rem 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .characters-swiper .swiper-slide {
+    width: 220px !important;
+  }
+  .characters-swiper figure {
+    width: 240px;
+    height: auto;
+  }
+  .characters-swiper img {
+    width: 100%;
+    height: auto;
+  }
+  .characters-section {
+    margin: 4rem 1rem;
+  }
+}
+/*responsive titre section*/
+@media (max-width: 426px) {
+  .story #characters h3 {
+    font-size: 1.8rem;
+  }
+}
+/* section lieu */
 .story #place {
   position: relative;
   background-image: url("../images/Studio_Koukaki-image_place.png");
   overflow: hidden;
 }
-
-#place .big_cloud {
+.story #place .big_cloud {
   position: absolute;
   width: 316px;
   height: 122px;
@@ -323,8 +354,7 @@
   top: 70px;
   filter: blur(10px);
 }
-
-#place .little_cloud {
+.story #place .little_cloud {
   position: absolute;
   width: 142px;
   height: 55px;
@@ -333,37 +363,22 @@
   filter: blur(13px);
 }
 
-/* ===== section footer/oscars ===== */
-.site-footer {
-  display: block;
-  min-height: 55rem;
-  padding-top: 10rem;
-  padding-bottom: 1rem;
-  position: relative;
-  overflow: hidden;
+/*responsive*/
+@media (max-width: 767px) {
+  .story #place .big_cloud,
+  .story #place .little_cloud {
+    display: none;
+  }
 }
-
-.site-footer::after {
-  content: none;
+/*responsive titre section*/
+@media (max-width: 426px) {
+  .story #place h3 {
+    font-size: 1.8rem;
+  }
 }
-
-.site-footer::before {
-  content: "";
-  position: absolute;
-  width: 216px;
-  height: 216px;
-  background-image: url("../../../foce/assets/images/Sunflower.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  left: 5rem;
-  top: 2rem;
-}
-
 #studio {
   position: relative;
 }
-
 #studio::after {
   content: "";
   position: absolute;
@@ -375,22 +390,31 @@
   background-position: center;
   right: -4rem;
   bottom: -8.5rem;
-  /*animation: rotateFlower 15s linear infinite; ajout de #studio::after dans animation de rotation*/
 }
 
+@media (max-width: 767px) {
+  #studio::after {
+    content: none;
+  }
+}
+/*responsive titre section studio*/
+@media (max-width: 471px) {
+  #studio h2 {
+    font-size: 1.8rem;
+  }
+}
+/* section footer / oscars */
 .oscars {
   width: 100%;
   position: relative;
   z-index: 2;
 }
-
 .oscars_inner {
   width: 100%;
   margin: 0;
   display: flex;
   justify-content: center;
 }
-
 .oscars_text {
   margin: 0;
   width: 761px;
@@ -418,7 +442,29 @@
   margin-top: 3.625rem;
 }
 
-/* menu footer fixé en bas */
+.site-footer {
+  display: block;
+  min-height: 55rem;
+  padding-top: 10rem;
+  padding-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.site-footer::after {
+  content: none;
+}
+.site-footer::before {
+  content: "";
+  position: absolute;
+  width: 216px;
+  height: 216px;
+  background-image: url("../../../foce/assets/images/Sunflower.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  left: 5rem;
+  top: 2rem;
+}
 .site-footer ul {
   position: absolute;
   bottom: 1rem;
@@ -427,7 +473,53 @@
   z-index: 2;
 }
 
-/* ==== animation desz chats header overlay*/
+/*responsive pseudo element désactivé*/
+@media (max-width: 767px) {
+  .site-footer::before {
+    content: none;
+  }
+}
+/*responsive p*/
+@media (max-width: 900px) {
+  #oscars p {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 700px) {
+  #oscars p {
+    background-image: none;
+    color: #FF6A00;
+    padding: 1.5rem;
+    height: auto;
+    text-align: center;
+  }
+}
+@media (max-width: 500px) {
+  .oscars_inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  #oscars p {
+    width: 90%;
+    text-align: center;
+  }
+  .img_oscars {
+    height: auto;
+    margin-top: 0;
+  }
+}
+@media (max-width: 403px) {
+  .site-footer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .site-footer ul li {
+    font-size: 0.85rem;
+  }
+}
+/* animation des chats header overlay */
 @keyframes floatCat {
   0% {
     transform: translate(0, 0) rotate(var(--rotate, 0deg));
@@ -445,7 +537,7 @@
     transform: translate(0, 0) rotate(var(--rotate, 0deg));
   }
 }
-/* ===== animation flottement titre ===== */
+/* animation flottement titre */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -454,8 +546,8 @@
     transform: translateY(-15px);
   }
 }
-/* ===== animation fade in avec Keyframes ===== */
-@keyframes fadeDown { /*effet de descente*/
+/* animation fade in */
+@keyframes fadeDown {
   from {
     opacity: 0;
     transform: translateY(-100px);
@@ -469,7 +561,7 @@
   animation: fadeDown 1.5s;
 }
 
-@keyframes fadeUp { /*effet de monté*/
+@keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(300px);
@@ -483,7 +575,7 @@
   animation: fadeUp 1.5s;
 }
 
-/* ===== rotation fleur ===== */
+/* rotation fleur */
 @keyframes rotateFlower {
   from {
     transform: rotate(0deg);
@@ -492,6 +584,7 @@
     transform: rotate(360deg);
   }
 }
+/* application des rotations */
 .story h2::after,
 .story__article::after,
 #studio h2::after,
@@ -503,14 +596,13 @@
   animation: rotateFlower 15s linear infinite;
 }
 
-/* ===== titre au scroll ===== */
+/* titre au scroll */
 .title-scroll {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.5s ease-in, transform 0.5s ease-in;
   display: inline-block;
 }
-
 .title-scroll.visible {
   opacity: 1;
   transform: translateY(0);

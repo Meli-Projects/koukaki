@@ -5,8 +5,8 @@ const swiper = new Swiper('.characters-swiper', {
       grabCursor: true,
       centeredSlides: false,
       slidesPerView: "3",
-      spaceBetween: 30, //+ non fourni avec swiper
-      loop: true, //+ non fourni avec swiper
+      spaceBetween: 30, 
+      loop: true, 
       coverflowEffect: {
         rotate: 0,
         stretch: 0,

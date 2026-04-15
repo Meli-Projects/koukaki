@@ -1,3 +1,4 @@
+/*titre au scroll*/
 document.addEventListener("DOMContentLoaded", () => {
   const titles = document.querySelectorAll(".title-scroll");
 
@@ -15,18 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
   titles.forEach((title) => observer.observe(title));
 });
 
-/* ===== paralaxe ===== */
-  const logoWrapper = document.querySelector('.banner_logo_wrapper');
-// On vérifie si présent + désactive sur tablette
-if (logoWrapper && window.innerWidth > 768) {
-  window.addEventListener('scroll', function () {
-    let scrollY = window.scrollY;
 
-    logoWrapper.style.transform = `translateY(${scrollY * 0.3}px)`;
+/*parallaxe logo bannière*/
+const bannerLogo = document.querySelector('.banner_logo_wrapper');
+
+if (bannerLogo && window.innerWidth > 768) {
+  window.addEventListener('scroll', function () {
+    const scrollPosition = window.scrollY;
+
+    bannerLogo.style.transform = `translateY(${scrollPosition * 0.3}px)`;
   });
 }
 
-/* ===== paralaxe nuages section lieu ===== */
+
+/*parallaxe nuage */
 document.addEventListener("DOMContentLoaded", function () {
   const placeSection = document.querySelector("#place");
   const bigCloud = document.querySelector(".big_cloud");
@@ -35,18 +38,17 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!placeSection || !bigCloud || !littleCloud) return;
 
   function moveClouds() {
-    const rect = placeSection.getBoundingClientRect();
+    const sectionPosition = placeSection.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    let progress = (windowHeight - rect.top) / (windowHeight + rect.height);
+    let scrollProgress = (windowHeight - sectionPosition.top) / (windowHeight + sectionPosition.height);
 
-    progress = Math.max(0, Math.min(progress, 1));
+    scrollProgress = Math.max(0, Math.min(scrollProgress, 1));
 
-    const translateValue = progress * -300;
-console.log(translateValue);
+    const cloudPosition = scrollProgress * -300;
 
-    bigCloud.style.transform = `translateX(${translateValue}px)`;
-    littleCloud.style.transform = `translateX(${translateValue}px)`;
+    bigCloud.style.transform = `translateX(${cloudPosition}px)`;
+    littleCloud.style.transform = `translateX(${cloudPosition}px)`;
   }
 
   window.addEventListener("scroll", moveClouds);
@@ -55,7 +57,8 @@ console.log(translateValue);
   moveClouds();
 });
 
-/* ===== menu ===== */
+
+/*menu*/
 document.addEventListener('DOMContentLoaded', function () {
 
   const menuToggle = document.querySelector('.menu-toggle');
@@ -63,19 +66,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const menuClose = document.querySelector('.menu-close');
   const menuLinks = document.querySelectorAll('.menu a');
 
-  // OUVRIR MENU
   menuToggle.addEventListener('click', function () {
     menuOverlay.classList.add('active');
     document.body.classList.add('no-scroll');
   });
 
-  // FERMER AVEC CROIX
   menuClose.addEventListener('click', function () {
     menuOverlay.classList.remove('active');
     document.body.classList.remove('no-scroll');
   });
 
-  // FERMER EN CLIQUANT SUR UN LIEN
   menuLinks.forEach(link => {
     link.addEventListener('click', function () {
       menuOverlay.classList.remove('active');

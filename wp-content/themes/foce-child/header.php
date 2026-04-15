@@ -1,5 +1,5 @@
 <?php
-/* ===== header menu burger ===== */
+/* header menu burger */
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -53,17 +53,17 @@
  <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/header/logo_menu.png" class="logo_menu" alt="Logo fleurs d'oranger et chats errants ">
                 
 <p class="menu-footer">STUDIO KOUKAKI</p>
-                <!-- Image des fleurs -->
+<!-- Image des fleurs -->
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/orchid.png" class="flower flower_orchid" alt="Image d'un orchidé violette">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Sunflower.png" class="flower flower_sunflower" alt="Image d'une fleur blanche">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/random_flower.png" class="flower flower_random" alt="Image d'une fleur rose">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/flower.png" class="flower flower_orange" alt="Image d'une fleur orange">
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hibiscus_footer.png" class="flower flower_hibiscus" alt="Image d'une fleur hibiscus">
 
-    <!--  Image des chats -->
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/header/cat_kawaneko.png" class="cat cat_kawaneko" alt="Image d'un personnage chat violet">
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/header/cat_onejiiro.png" class="cat cat_onejiiro" alt="Image d'un personnage chat roux">
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/header/cat_jaakuna.png" class="cat cat_jaakuna" alt="Image d'un personnage chat gris">
+<!--  Image des chats -->
+<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/header/cat_kawaneko.png" class="cat cat_kawaneko" alt="Image d'un personnage chat violet">
+<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/header/cat_onejiiro.png" class="cat cat_onejiiro" alt="Image d'un personnage chat roux">
+<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/header/cat_jaakuna.png" class="cat cat_jaakuna" alt="Image d'un personnage chat gris">
             </div>
 
         </header>

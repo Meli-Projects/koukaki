@@ -212,3 +212,22 @@
   height: 147px;
   --rotate: 0deg;
 }
+
+/*responsive*/
+@media (max-width: 700px) {
+  .menu-overlay img {
+    display: none;
+  }
+  
+  .menu-overlay .logo_menu {
+    display: block;
+  }
+
+  .menu a {
+    font-size: 3rem;
+  }
+
+  .menu li {
+    margin: 1.5rem 0;
+  }
+}

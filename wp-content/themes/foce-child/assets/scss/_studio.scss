@@ -1,0 +1,29 @@
+#studio {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    background-image: url("../../../foce/assets/images/orchid.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    right: -4rem;
+    bottom: -8.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #studio::after {
+    content: none;
+  }
+}
+
+/*responsive titre section studio*/
+@media (max-width: 471px) {
+  #studio h2 {
+    font-size: 1.8rem; 
+  }
+}
